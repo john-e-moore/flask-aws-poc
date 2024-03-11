@@ -1,6 +1,6 @@
 {% extends 'base.html' %}
 
 {% block content %}
-  <h1>Projections</h1>
-  <p>Sortable table with projections will go here. Requires login.</p>
+<h2>Projections (Last updated: {{ last_updated }})</h2>
+{{ data|safe }}
 {% endblock %}

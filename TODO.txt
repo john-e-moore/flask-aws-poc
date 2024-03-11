@@ -1,5 +1,5 @@
 * Figure out config and database
 * Read data from S3 and display as table
-* Find new CSS template
-* Cache S3 data 
+* Better CSS formatting / tempalte
+* Social media links (discord, twitter)
 * Track page views (and what else?) in DB model

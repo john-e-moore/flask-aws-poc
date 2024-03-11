@@ -1,7 +1,9 @@
 import os
+import pandas as pd
 from markdown import markdown
-from flask import Blueprint, render_template
+from flask import Blueprint, render_template, current_app
 from flask_login import login_required, current_user
+from .config import Config
 
 main = Blueprint('main', __name__)
 
@@ -35,4 +37,15 @@ def profile():
 @main.route('/projections')
 @login_required
 def projections():
-    return render_template('projections.html', name=current_user.username)
+    local_download_path = Config.PROJECTIONS_DOWNLOAD_LOCAL_KEY
+    if os.path.exists(local_download_path):
+        data = pd.read_csv(local_download_path)
+        data_html = data.to_html(classes='sortable', index=False)  # 'sortable' class for frontend sorting
+    else:
+        data_html = "<p>No data available.</p>"
+    return render_template(
+        'projections.html', 
+        name=current_user.username,
+        data=data_html,
+        last_updated=current_app.config['LAST_UPDATED']
+    )

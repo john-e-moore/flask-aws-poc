@@ -1,7 +1,10 @@
+import os
 from flask import Flask
 from flask_sqlalchemy import SQLAlchemy
 from flask_login import LoginManager
 from .config import Config
+from .utils.scheduler import schedule_csv_download
+from .utils.s3_utils import download_csv_from_s3
 
 db = SQLAlchemy()
 
@@ -26,5 +29,14 @@ def create_app():
 
     from .main import main as main_blueprint
     app.register_blueprint(main_blueprint)
+
+    # Download projections
+    app.config['LAST_UPDATED'] = download_csv_from_s3(
+        os.getenv('FLASK_S3_BUCKET'),
+        os.getenv('FLASK_S3_KEY'),
+        Config.PROJECTIONS_DOWNLOAD_LOCAL_KEY
+    )
+    # Schedule future projections downloads
+    schedule_csv_download()
 
     return app
