@@ -19,10 +19,12 @@ def blog():
     posts = []
     for filename in posts_files:
         filepath = os.path.join(posts_dir, filename)
+        authored_date = filename.split('_')[0]
+        post_title = filename.split('_')[1].split('.')[0].replace('-',' ').title()
         with open(filepath, 'r') as file:
             post_content = file.read()
         html_content = markdown(post_content)
-        posts.append({'title': filename, 'content': html_content})
+        posts.append({'date': authored_date, 'title': post_title, 'content': html_content})
     return render_template('blog.html', posts=posts)
 
 @main.route('/profile')
