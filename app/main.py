@@ -40,7 +40,8 @@ def projections():
     local_download_path = Config.PROJECTIONS_DOWNLOAD_LOCAL_KEY
     if os.path.exists(local_download_path):
         data = pd.read_csv(local_download_path)
-        data_html = data.to_html(classes='sortable', index=False)  # 'sortable' class for frontend sorting
+        data_html = data.to_html(classes='display', index=False)
+        data_html = data_html.replace('<table border="1" class="dataframe display">', '').replace('</table>', '')
     else:
         data_html = "<p>No data available.</p>"
     return render_template(
