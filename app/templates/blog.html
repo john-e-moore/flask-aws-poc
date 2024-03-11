@@ -2,5 +2,10 @@
 
 {% block content %}
   <h1>Blog</h1>
-  <p>Public blogs will be posted here.</p>
+  {% for post in posts %}
+    <div class="blog-post">
+      <h2>{{ post.title }}</h2>
+      <div>{{ post.content|safe }}</div>
+    </div>
+  {% endfor %}
 {% endblock %}

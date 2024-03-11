@@ -1,0 +1,6 @@
+* Add blog page
+* Add navigation bar at top
+* Read data from S3 and display as table
+* Find new CSS template
+* Cache S3 data 
+* Track page views (and what else?) in DB model
