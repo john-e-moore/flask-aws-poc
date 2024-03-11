@@ -1,5 +1,5 @@
-* Figure out config and database
-* Read data from S3 and display as table
+* Make table sortable
+* What else to store in database?
 * Better CSS formatting / tempalte
 * Social media links (discord, twitter)
 * Track page views (and what else?) in DB model
