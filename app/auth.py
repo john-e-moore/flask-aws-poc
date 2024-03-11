@@ -6,6 +6,10 @@ from flask_login import login_user, logout_user, login_required
 
 auth = Blueprint('auth', __name__)
 
+################################################################################
+# Signup / login / logout
+################################################################################
+
 @auth.route('/login', methods=['GET', 'POST'])
 def login():
     if request.method == 'POST':
@@ -49,3 +53,7 @@ def signup():
 def logout():
     logout_user()
     return redirect(url_for('main.index'))
+
+################################################################################
+# Navigation Bar
+################################################################################

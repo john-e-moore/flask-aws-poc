@@ -16,3 +16,26 @@ input[type=text], input[type=password], input[type=submit] {
     display: block;
     margin-top: 5px;
 }
+
+/* Navigation Bar Styles */
+.navbar {
+    background-color: black;
+    overflow: hidden;
+}
+
+.navbar a {
+    float: left;
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+
+.navbar a:hover {
+    background-color: red;
+}
+
+.right {
+    float: right;
+}
