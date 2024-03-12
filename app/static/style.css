@@ -1,10 +1,17 @@
+header {
+    background: url('../static/images/samurai1.png') no-repeat center center fixed;
+    background-size: cover;
+    height: 200px; /* Adjust height as needed */
+}
+
 body {
     font-family: Arial, sans-serif;
     margin: 40px;
+    background-color: #F8F8F8; /* Light off-white background */
 }
 
 h1, h2 {
-    color: black;
+    color: #333333; /* Dark gray text */
 }
 
 form > label {
@@ -19,23 +26,34 @@ input[type=text], input[type=password], input[type=submit] {
 
 /* Navigation Bar Styles */
 .navbar {
-    background-color: black;
+    background-color: #ce3c3c; /* Maroon color */
     overflow: hidden;
+    border-radius: 5px; /* Rounded edges */
 }
 
 .navbar a {
     float: left;
     display: block;
-    color: white;
+    color: #F8F8F8; /* Off-white text */
     text-align: center;
     padding: 14px 16px;
     text-decoration: none;
 }
 
 .navbar a:hover {
-    background-color: red;
+    background-color: #A53860; /* Darker maroon on hover */
 }
 
 .right {
     float: right;
+}
+
+.left {
+    float: left;
+}
+
+.container {
+    max-width: 960px;
+    margin: 0 auto;
+    padding: 20px;
 }

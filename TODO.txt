@@ -1,5 +1,11 @@
-* Make table sortable
-* What else to store in database?
+* What else to store in database? Page views, ??
 * Better CSS formatting / tempalte
+ * Red/white/black but soft -- same color as claude for background
+ * Have claude create base html with jquery that looks like claude site
 * Social media links (discord, twitter)
-* Track page views (and what else?) in DB model
+* Email flow for signups
+* Logging
+* Testing
+* Complete scrapers for DK and FD
+* Buy domain
+* Deploy (elastic beanstalk or heroku)

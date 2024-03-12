@@ -39,7 +39,11 @@ def profile():
 def projections():
     local_download_path = Config.PROJECTIONS_DOWNLOAD_LOCAL_KEY
     if os.path.exists(local_download_path):
-        data = pd.read_csv(local_download_path)
+        usecols = [
+            'player', 'Team', 'Opponent', 'DK Position', 'proj_source', 'DK Salary',
+            'DK Projection', 'proj_fpts_dk', 'DK Difference'
+        ]
+        data = pd.read_csv(local_download_path, usecols=usecols)
         data_html = data.to_html(classes='display', index=False)
         data_html = data_html.replace('<table border="1" class="dataframe display">', '').replace('</table>', '')
     else:
