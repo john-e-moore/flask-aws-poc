@@ -24,6 +24,12 @@ input[type=text], input[type=password], input[type=submit] {
     margin-top: 5px;
 }
 
+.container {
+    max-width: 960px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
 /* Navigation Bar Styles */
 .navbar {
     background-color: #ce3c3c; /* Maroon color */
@@ -50,10 +56,4 @@ input[type=text], input[type=password], input[type=submit] {
 
 .left {
     float: left;
-}
-
-.container {
-    max-width: 960px;
-    margin: 0 auto;
-    padding: 20px;
 }
